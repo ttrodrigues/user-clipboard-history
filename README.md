@@ -1,18 +1,12 @@
-<h1 align="center">
-  <br>
-  VS Code - Clipboard History Extension
-  <br>
-  <br>
-    <img src="https://raw.githubusercontent.com/aefernandes/vscode-clipboard-history-extension/master/images/logo.png" alt="logo" width="200">
-  <br>
-</h1>
-<h4 align="center">Keep a history of your copied and cut items and re-paste if needed.</h4>
+![](/media/logo.png)
+
+# User Clipboard History
 
 -----------------------------------------------------------------------------------------------------------
 
 ## Key Features
 
-1. Save history of all copied and cut items
+1. Save history of all copied and cut items on user settings and across all devices (sync feature is mandatory)
 2. Paste from history
 3. Clear all history
 4. Remove selected item from history
@@ -20,40 +14,32 @@
 
 ## Keyboard Shortcuts
 
-**Type Clipboard in the command palette to view all commands.**
+:warning: **Type User Clipboard History in the command palette to view all commands.**
 
 `Ctrl+C` copies and `Ctrl+X ` cuts the selected item. These override the default shortcuts to save the item to clipboard. If nothing is selected, the entire line will be saved. 
 
 `Ctrl+V` pastes the most recent item.
 
-`Ctrl+Shift+V` opens the clipboard history. Use the arrow keys to scroll and press Enter to paste a selected item. 
+`Ctrl+Shift+V` opens the clipboard history. Use the arrow keys to scroll and press `Enter` to paste a selected item. 
 
-`Ctrl+Alt+V D` opens the clipboard delete settings. Use the arrow keys to scroll and press Enter to remove a selected item. The "Clear History" option will erase all items from history.
+`Ctrl+Alt+V D` opens the clipboard delete settings. Use the arrow keys to scroll and press `Enter` to remove a selected item. 
 
-`Ctrl+Alt+V E` opens the clipboard editor settings. Use the arrow keys to scroll and press Enter to edit a selected item. 
+`Ctrl+Alt+V E` opens the clipboard editor settings. Use the arrow keys to scroll and press `Enter` to edit a selected item. 
+
+`Ctrl+Alt+V H` all history of user's clipboard will be erased. 
 
 You can also add custom keyboard short cuts by following the instructions in the [customization documentation](https://code.visualstudio.com/docs/customization/keybindings).
 
 ## Configuration
 
-`clipboard.size` is the maximum number of items saved in the clipboard. The default is 12, but this can be changed in [settings](https://code.visualstudio.com/docs/getstarted/settings#_default-settings).
+`user-clipboard-history.size` is the maximum number of items saved in the clipboard. The default is **20**.
 
+`user-clipboard-history.historyArray` array on user settings where **all history will be saved**.
 
-## Demos
-### Saving to and Pasting from Clipboard History
+Both configuration can be accessed on [settings](https://code.visualstudio.com/docs/getstarted/settings#_default-settings).
 
-![demo](images/demo-1.gif)
-
-
-### Erasing from Clipboard History
-
-![demo](images/demo-2.gif)
-  
-### Editing Clipboard History
-
-![demo](images/demo-3.gif)
-
-
+## Inspiration
+Fork of [Clipboard History Extension](https://marketplace.visualstudio.com/items?itemName=Anjali.clipboard-history) with the changes to keep the clipboard history on user's settings, and synced for all devices.
 
 
 -----------------------------------------------------------------------------------------------------------

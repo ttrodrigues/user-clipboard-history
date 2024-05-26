@@ -1,18 +1,18 @@
 {
-    "name": "clipboard-history",
-    "displayName": "Clipboard History",
-    "description": "Keep a history of your copied items and re-paste if needed",
-    "version": "1.0.6",
-    "publisher": "Anjali",
+    "name": "user-clipboard-history",
+    "displayName": "User Clipboard History",
+    "description": "Keeps user history clipboard history on profile settings",
+    "version": "1.0.0",
+    "publisher": "ttrodrigues",
     "license": "LICENSE.md",
-    "icon": "images/logo.png",
+    "icon": "media/logo.png",
     "bugs": {
-        "url": "https://github.com/aefernandes/vscode-clipboard-history-extension/issues"
+        "url": "https://github.com/ttrodrigues/user-clipboard-history/issues"
     },
-    "homepage": "https://github.com/aefernandes/vscode-clipboard-history-extension/blob/master/README.md",
+    "homepage": "https://github.com/ttrodrigues/user-clipboard-history/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/aefernandes/vscode-clipboard-history-extension/"
+        "url": "https://github.com/ttrodrigues/user-clipboard-history"
     },
     "engines": {
         "vscode": "^1.12.0"
@@ -21,88 +21,104 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:clipboard.copy",
-        "onCommand:clipboard.cut",
-        "onCommand:clipboard.paste",
-        "onCommand:clipboard.pasteFromClipboard",
-        "onCommand:clipboard.removeFromClipboard",
-        "onCommand:clipboard.editClipboard"
+        "onCommand:user-clipboard-history.copy",
+        "onCommand:user-clipboard-history.cut",
+        "onCommand:user-clipboard-history.paste",
+        "onCommand:user-clipboard-history.pasteFromClipboard",
+        "onCommand:user-clipboard-history.removeFromClipboard",
+        "onCommand:user-clipboard-history.editClipboard"
     ],
     "main": "./out/src/clipboard",
     "contributes": {
         "configuration": {
             "type": "object",
-            "title": "Clipboard History",
+            "title": "User Clipboard History",
             "properties": {
-                "clipboard.size": {
+                "user-clipboard-history.size": {
                     "type": "integer",
                     "minimum": 1,
-                    "default": 12,
-                    "description": "Maximum number of items saved in clipboard"
+                    "default": 20,
+                    "description": "Maximum number of items of clipboard to be saved in user's profile"
+                },
+                "user-clipboard-history.historyArray": {
+                    "type": "array",
+                    "default": [],
+                    "markdownDescription": "History of clipboard's data"
                 }
             }
         },
         "commands": [
             {
-                "command": "clipboard.copy",
-                "title": "Copy to Clipboard"
+                "command": "user-clipboard-history.copy",
+                "title": "User Clipboard History: Copy to Clipboard"
             },
             {
-                "command": "clipboard.cut",
-                "title": "Cut to Clipboard"
+                "command": "user-clipboard-history.cut",
+                "title": "User Clipboard History: Cut to Clipboard"
             },
             {
-                "command": "clipboard.paste",
-                "title": "Paste"
+                "command": "user-clipboard-history.paste",
+                "title": "User Clipboard History: Paste"
             },
             {
-                "command": "clipboard.pasteFromClipboard",
-                "title": "Paste from Clipboard"
+                "command": "user-clipboard-history.pasteFromClipboard",
+                "title": "User Clipboard History: Paste from Clipboard"
             },
             {
-                "command": "clipboard.removeFromClipboard",
-                "title": "Remove from Clipboard"
+                "command": "user-clipboard-history.removeFromClipboard",
+                "title": "User Clipboard History: Remove from Clipboard"
             },
             {
-                "command": "clipboard.editClipboard",
-                "title": "Edit Clipboard"
+                "command": "user-clipboard-history.editClipboard",
+                "title": "User Clipboard History: Edit Clipboard"
+            },
+            {
+                "command": "user-clipboard-history.clearClipboard",
+                "title": "User Clipboard History: Clear All Clipboard"
             }
         ],
         "keybindings": [
             {
-                "command": "clipboard.copy",
+                "command": "user-clipboard-history.copy",
                 "key": "ctrl+c",
                 "mac": "cmd+c",
                 "when": "editorTextFocus"
             },
             {
-                "command": "clipboard.cut",
+                "command": "user-clipboard-history.cut",
                 "key": "ctrl+x",
                 "mac": "cmd+x",
                 "when": "editorTextFocus"
             },
             {
-                "command": "clipboard.paste",
+                "command": "user-clipboard-history.paste",
                 "key": "ctrl+v",
                 "mac": "cmd+v",
                 "when": "editorTextFocus"
             },
             {
-                "command": "clipboard.pasteFromClipboard",
+                "command": "user-clipboard-history.pasteFromClipboard",
                 "key": "ctrl+shift+v",
                 "mac": "cmd+shift+v",
                 "when": "editorTextFocus"
             },
             {
-                "command": "clipboard.removeFromClipboard",
+                "command": "user-clipboard-history.removeFromClipboard",
                 "key": "ctrl+alt+v d",
                 "mac": "cmd+alt+v d",
                 "when": "editorTextFocus"
             },
             {
-                "command": "clipboard.editClipboard",
+                "command": "user-clipboard-history.editClipboard",
                 "key": "ctrl+alt+v e",
                 "mac": "cmd+alt+v e",
+                "when": "editorTextFocus"
+            }
+            ,
+            {
+                "command": "user-clipboard-history.clearClipboard",
+                "key": "ctrl+alt+v h",
+                "mac": "cmd+alt+v h",
                 "when": "editorTextFocus"
             }
         ]
